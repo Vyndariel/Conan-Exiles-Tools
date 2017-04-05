@@ -1,0 +1,16 @@
+delete from buildable_health where object_id in (select distinct object_id from buildings where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5)));
+delete from building_instances where object_id in (select distinct object_id from buildings where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5)));
+delete from properties where object_id in (select distinct object_id from buildings where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5)));
+delete from actor_position where id in (select distinct object_id from buildings where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5)));
+delete from properties where object_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from buildings where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from item_properties where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from item_inventory where owner_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from actor_position where id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from character_stats where char_id in (select id from characters where lastTimeOnline < (julianday('now') - 1296000.5));
+delete from characters where lastTimeOnline < (julianday('now') - 1296000.5);
+end transaction;
+VACUUM;
+REINDEX;
+ANALYZE;
+pragma integrity_check;
