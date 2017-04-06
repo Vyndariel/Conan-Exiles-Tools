@@ -1,0 +1,25 @@
+[Core.Log]
+Gamecode_Building=all off
+Gamecode_Items=all off
+Gamecode_AI=all off
+Gamecode_Combat=all off
+Gamecode_NPC=all off
+Gamecode_Effects=all off
+Network=all off
+SmokeTest=all off
+LogCook=all off
+LogSavePackage=all off
+LogPackageDependencyInfo=all off
+LogTexture=all off
+LogStreaming=all off
+LogGameMode=all off
+HeatmapMetrics=all off
+LogUObjectGlobals=all off
+AI=all off
+Login=all off
+ItemInventory=all off
+LogScript=all off
+LogNetPackageMap=all off
+LogCharacterMovement=all off
+LogAnimMontage=all off
+Combat=all off
